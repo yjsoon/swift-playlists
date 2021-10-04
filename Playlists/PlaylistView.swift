@@ -12,7 +12,15 @@ struct PlaylistView: View {
     var playlist: Playlist
     
     var body: some View {
-        Text(playlist.name)
+        List(playlist.songs) { song in
+            VStack(alignment: .leading) {
+                Text(song.title)
+                    .font(.headline)
+                Text(song.artist)
+                    .font(.subheadline)
+            }
+        }
+        .navigationTitle(playlist.name)
     }
 }
 
