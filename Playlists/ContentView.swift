@@ -14,13 +14,20 @@ struct ContentView: View {
         Playlist(name: "Sentimental stuff", songs:
                     [Song(title: "I'm sleepy", artist: "Me"),
                      Song(title: "I'm also sleepy", artist: "Rick")
+                    ]),
+        Playlist(name: "Angry stuff", songs:
+                    [Song(title: "I'm sleepy", artist: "Me"),
+                     Song(title: "I'm also sleepy", artist: "Rick")
                     ])
+
     ]
     
     var body: some View {
         NavigationView {
             List(playlists) { playlist in
-                Text(playlist.name)
+                NavigationLink(destination: PlaylistView()) {
+                    Text(playlist.name)
+                }
             }.navigationTitle("My amazing playlists")
         }
     }
