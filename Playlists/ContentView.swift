@@ -25,7 +25,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(playlists) { playlist in
-                NavigationLink(destination: PlaylistView()) {
+                NavigationLink(destination: PlaylistView(playlist: playlist)) {
                     Text(playlist.name)
                 }
             }.navigationTitle("My amazing playlists")

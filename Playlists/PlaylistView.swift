@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct PlaylistView: View {
+    
+    var playlist: Playlist
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(playlist.name)
     }
 }
 
 struct PlaylistView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistView()
+        PlaylistView(playlist: Playlist(name: "Sentimental stuff", songs:
+                                            [Song(title: "I'm sleepy", artist: "Me"),
+                                             Song(title: "I'm also sleepy", artist: "Rick")
+                                            ]))
     }
 }
